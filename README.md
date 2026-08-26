@@ -134,5 +134,5 @@ under `/api` runs as a serverless function.
 ---
 
 <div align="center">
-<sub>© Vebis Studio — <a href="https://vebis.vercel.app">vebis.vercel.app</a></sub>
+<sub>© Vebis Studio — <a href="https://vebis.pl">vebis.pl</a></sub>
 </div>
