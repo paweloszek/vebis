@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vebis Studio | Strony www i aplikacje webowe</title>
+  <meta name="description" content="Agencja kreatywna nowej generacji. Łączymy unikalny branding, zaawansowane strony internetowe i automatyzacje AI. Zdobądź przewagę. Zobacz nasze projekty." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- loading screen: held until the hero rock/planet images have loaded -->
+  <div class="loader" id="loader" role="status" aria-label="Ładowanie strony">
+    <svg class="loader__logo" viewBox="0 0 470 470" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M435 234.975C435 261.961 429.715 288.199 419.293 312.84C409.221 336.684 394.81 358.083 376.461 376.439C358.111 394.796 336.72 409.211 312.886 419.287C288.203 429.713 262.025 435 235.05 435C208.074 435 181.846 429.713 157.214 419.287C140.41 412.154 124.803 402.876 110.592 391.603L138.315 363.869C166.039 384.769 199.647 396.092 235 396.092C270.353 396.092 318.47 379.332 348.887 348.905C379.303 318.477 396.057 278.023 396.057 234.975C396.057 191.928 391.869 192.726 383.94 173.472L238.789 319.724L211.165 292.289L391.619 110.471L413.21 143.992C415.404 148.281 417.448 152.621 419.293 157.061C429.715 181.752 435 207.94 435 234.926V234.975Z" fill="#f2f2ef"/>
+      <path d="M121.113 121.045C90.6969 151.473 73.943 191.927 73.943 234.975C73.943 278.022 78.1315 277.224 86.0597 296.478L231.211 150.226L258.835 177.661L78.3808 359.479C70.0537 349.054 62.8235 337.83 56.7901 325.958C54.5961 321.669 52.5518 317.329 50.7068 312.889C40.2855 288.198 35 262.01 35 235.025C35 208.039 40.2855 181.801 50.7068 157.16C60.7791 133.316 75.1895 111.917 93.5391 93.5608C111.889 75.2044 133.28 60.7887 157.114 50.7127C181.797 40.2874 207.975 35 234.95 35C261.926 35 288.154 40.2874 312.786 50.7127C329.59 57.8457 345.197 67.1236 359.408 78.3969L331.685 106.131C303.961 85.2306 270.353 73.9075 235 73.9075C199.647 73.9075 151.53 90.6677 121.113 121.095V121.045Z" fill="#f2f2ef"/>
+    </svg>
+    <div class="loader__bar"><span></span></div>
+  </div>
+
+  <!-- scroll spacer drives the pinned hero animation -->
+  <div class="scene">
+    <header class="nav" id="nav">
+      <a href="#" class="brand" aria-label="Vebis">
+        <svg class="brand__logo" width="98" height="28" viewBox="0 0 98 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M28 13.993C28 15.8813 27.6301 17.7173 26.9006 19.4415C26.1955 21.1099 25.1868 22.6073 23.9023 23.8918C22.6178 25.1763 21.1205 26.185 19.4521 26.89C17.7243 27.6195 15.8918 27.9895 14.0035 27.9895C12.1152 27.9895 10.2793 27.6195 8.55503 26.89C7.37876 26.3909 6.28627 25.7417 5.2915 24.9529L7.23217 23.0122C9.17283 24.4747 11.5254 25.267 14.0001 25.267C16.4747 25.267 19.843 24.0942 21.9721 21.9651C24.1013 19.8359 25.274 17.0052 25.274 13.993C25.274 10.9808 24.9809 11.0366 24.4259 9.68935L14.2653 19.9232L12.3316 18.0035L23.0262 7.23211L24.9634 5.28098L26.4747 7.62652C26.6283 7.9267 26.7714 8.23036 26.9006 8.54101C27.6301 10.2688 28 12.1012 28 13.9895V13.993Z" fill="currentColor"/>
+          <path d="M6.02792 6.02094C3.89878 8.15008 2.726 10.9808 2.726 13.993C2.726 17.0052 3.0192 16.9494 3.57417 18.2967L13.7347 8.06282L15.6684 9.98254L4.97382 20.7539L3.03665 22.705C2.45375 21.9756 1.94764 21.1902 1.52531 20.3595C1.37173 20.0593 1.22862 19.7557 1.09948 19.445C0.369982 17.7173 0 15.8848 0 13.9965C0 12.1082 0.369982 10.2722 1.09948 8.54799C1.80454 6.87958 2.81326 5.3822 4.09773 4.09773C5.3822 2.81326 6.87958 1.80454 8.54799 1.09948C10.2757 0.369982 12.1082 0 13.9965 0C15.8848 0 17.7208 0.369982 19.445 1.09948C20.6213 1.5986 21.7138 2.24782 22.7085 3.03665L20.7679 4.97731C18.8272 3.51483 16.4747 2.72251 14 2.72251C11.5253 2.72251 8.15707 3.89529 6.02792 6.02443V6.02094Z" fill="currentColor"/>
+          <path d="M38.56 8.49475H40.968L45.364 20.5348L49.732 8.49475H52.14L47.016 22.4948H43.684L38.56 8.49475ZM58.3582 22.7748C48.9782 22.7748 48.9782 8.21475 58.3582 8.21475C62.8102 8.21475 65.3582 11.7148 65.0502 15.6348H53.5702C53.6262 18.2388 55.2222 20.8148 58.3582 20.8148C60.6262 20.8148 62.1382 19.5548 62.8102 17.8188H65.0502C64.4062 20.1708 62.0262 22.7748 58.3582 22.7748ZM53.8222 13.6748H62.7262C62.4742 11.7988 60.8222 10.1748 58.3582 10.1748C55.8942 10.1748 54.3822 11.7428 53.8222 13.6748ZM66.2045 22.4948V2.89475H68.4445V10.5668C69.4805 9.27875 71.2165 8.21475 73.2605 8.21475C82.6405 8.21475 82.6405 22.7748 73.2605 22.7748C71.2165 22.7748 69.5085 21.7948 68.4445 20.4228V22.4948H66.2045ZM73.2605 20.8148C79.7005 20.8148 79.7005 10.1748 73.2605 10.1748C66.8765 10.1748 66.8765 20.8148 73.2605 20.8148ZM82.779 7.87875C80.987 7.87875 80.987 5.19075 82.779 5.19075C84.515 5.19075 84.515 7.87875 82.779 7.87875ZM81.659 22.4948V8.49475H83.899V22.4948H81.659ZM84.935 18.1828H87.231C87.819 20.0868 89.387 20.8148 90.871 20.8148C92.551 20.8148 94.147 19.8628 94.175 18.5188C94.203 14.7108 85.103 18.0988 85.243 12.4148C85.327 9.75475 87.987 8.07475 90.787 8.07475C93.363 8.07475 96.079 9.47475 97.003 12.8348H94.707C94.119 10.8748 92.411 10.0348 90.787 10.0348C89.107 10.0348 87.539 10.9588 87.483 12.4148C87.399 15.8028 96.415 12.4148 96.415 18.5188C96.415 21.0668 93.643 22.8028 90.787 22.8028C88.295 22.8028 85.719 21.4868 84.935 18.1828Z" fill="currentColor"/>
+        </svg>
+      </a>
+
+      <nav class="nav__links">
+        <a href="#uslugi">Usługi</a>
+        <a href="#asystent">Asystent AI</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <a href="konsultacja.html" class="btn btn--ghost-pill">
+        Współpraca <span class="arrow">↗</span>
+      </a>
+    </header>
+
+    <section class="hero" id="hero">
+      <div class="stars" id="stars" aria-hidden="true"></div>
+      <div class="glow"></div>
+
+      <!-- monumental levitating formations + breaking fragments -->
+      <div class="field" id="field">
+        <!-- planet limb arcing across the gap between the two rocks -->
+        <div class="moon" id="moon" aria-hidden="true">
+          <div class="moon__inner" id="moonInner">
+            <img src="assets/planet.webp" alt="" />
+          </div>
+        </div>
+
+        <!-- distant floating debris at varied depths -->
+        <div class="rock deb deb--1" data-type="fragment" data-depth="0.16"><div class="rock__f"><img src="assets/boulder.webp" alt="" /></div></div>
+        <div class="rock deb deb--2" data-type="fragment" data-depth="0.24"><div class="rock__f"><img src="assets/shard1.webp" alt="" /></div></div>
+        <div class="rock deb deb--3" data-type="fragment" data-depth="0.34"><div class="rock__f"><img src="assets/shard2.webp" alt="" /></div></div>
+        <div class="rock deb deb--4" data-type="fragment" data-depth="0.42"><div class="rock__f"><img src="assets/peak3.webp" alt="" /></div></div>
+        <div class="rock deb deb--5" data-type="fragment" data-depth="0.2"><div class="rock__f"><img src="assets/shard1.webp" alt="" /></div></div>
+        <div class="rock deb deb--6" data-type="fragment" data-depth="0.22"><div class="rock__f"><img src="assets/shard2.webp" alt="" /></div></div>
+        <div class="rock deb deb--7" data-type="fragment" data-depth="0.46"><div class="rock__f"><img src="assets/boulder.webp" alt="" /></div></div>
+        <div class="rock deb deb--8" data-type="fragment" data-depth="0.36"><div class="rock__f"><img src="assets/peak3.webp" alt="" /></div></div>
+        <div class="rock deb deb--9" data-type="fragment" data-depth="0.18"><div class="rock__f"><img src="assets/shard2.webp" alt="" /></div></div>
+        <div class="rock deb deb--10" data-type="fragment" data-depth="0.19"><div class="rock__f"><img src="assets/boulder.webp" alt="" /></div></div>
+
+        <!-- two huge jagged monoliths framing the scene -->
+        <div class="rock r-peak" data-type="formation" data-depth="0.9"><div class="rock__f"><img src="assets/peak.webp" alt="" /></div></div>
+        <div class="rock r-lean" data-type="formation" data-depth="0.98"><div class="rock__f"><img src="assets/peak2.webp" alt="" /></div></div>
+      </div>
+
+      <!-- soft dark scrim to keep the headline readable over the scene -->
+      <div class="hero__scrim" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <h1 class="hero__title" id="title">
+          <span class="line">WEBDESIGN SZYTY NA MIARĘ</span>
+          <span class="line">NAJWYŻSZYCH AMBICJI.</span>
+        </h1>
+
+        <div class="hero__cta" id="cta">
+          <p class="hero__lead">
+            Twoja strona robi pierwsze wrażenie.<br />
+            My dbamy, żeby było dobre.
+          </p>
+          <div class="hero__buttons">
+            <a href="konsultacja.html" class="btn btn--solid">Zdobądź przewagę <span class="arrow">↗</span></a>
+            <a href="#uslugi" class="btn btn--outline">Nasze usługi</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint" id="hint">
+        <span>Przewiń</span>
+        <span class="scroll-hint__line"></span>
+      </div>
+    </section>
+  </div>
+
+  <section class="services" id="uslugi">
+    <div class="services__ambient" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+    </div>
+
+    <div class="services__head reveal">
+      <span class="eyebrow"><i class="eyebrow__dot"></i> Nasze usługi</span>
+      <h2 class="services__title">Od wizji do konwersji. Tworzymy rzeczy, które zarabiają.</h2>
+      <p class="services__lead">
+        Nie wierzymy w sztukę dla sztuki. Łączymy design, strategię i technologię,
+        aby przekształcić Twoją markę w lidera rynku. Zobacz, jak możemy Ci pomóc.
+      </p>
+    </div>
+
+    <div class="services__grid">
+      <article class="card reveal">
+        <div class="card__glass"></div>
+        <div class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.06 11.9l8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08" />
+            <path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z" />
+          </svg>
+        </div>
+        <h3 class="card__title">Branding &amp; Strategia</h3>
+        <p class="card__text">
+          Projektujemy fundamenty, których nie da się podrobić. Łączymy precyzyjną
+          strategię biznesową z bezkompromisowym designem wizualnym. Tworzymy spójne
+          systemy identyfikacji (branding), które budują silną pozycję rynkową
+          i sprawiają, że Twoja marka od pierwszego spojrzenia komunikuje najwyższą jakość.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__glass"></div>
+        <div class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+            <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+          </svg>
+        </div>
+        <h3 class="card__title">Digital Product &amp; UX/UI Design</h3>
+        <p class="card__text">
+          Tworzymy cyfrowe doświadczenia na najwyższym poziomie. Projektujemy intuicyjne
+          interfejsy i wdrażamy zaawansowane strony internetowe oraz e-sklepy, które płynnie
+          łączą estetykę z technologią. Dbamy o każdy pixel i ścieżkę użytkownika (UX),
+          przekształcając zwykłe odwiedziny w lojalność wobec marki.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__glass"></div>
+        <div class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+            <path d="M2 12h20" />
+          </svg>
+        </div>
+        <h3 class="card__title">Automatyzacje AI &amp; SEO</h3>
+        <p class="card__text">
+          Wprowadzamy Twój biznes w przyszłość, automatyzując wzrost. Projektujemy dedykowane
+          systemy oraz asystentów AI, którzy przejmują powtarzalne procesy i obsługę klienta 24/7.
+          Równolegle pozycjonujemy Twoją markę w Google (SEO), zapewniając stały dopływ
+          wartościowego ruchu organicznego. Przejdź na wyższy poziom efektywności.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="assistant" id="asystent">
+    <div class="assistant__ambient" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--3"></span>
+    </div>
+
+    <div class="assistant__inner">
+      <!-- LEFT: copy + feature icons -->
+      <div class="assistant__copy reveal">
+        <span class="eyebrow"><i class="eyebrow__dot"></i> Asystent AI</span>
+        <h2 class="assistant__title">Zatrudnij AI na swojej stronie. Zobacz, jak działa w akcji.</h2>
+        <p class="assistant__lead">
+          <span class="assistant__pos assistant__pos--wide">Po prawej stronie</span><span class="assistant__pos assistant__pos--narrow">Niżej</span> znajduje się nasz inteligentny asystent, wyszkolony, by wspierać
+          Twój biznes 24/7. Przetestuj go – zadaj mu pytanie o nasze usługi, proces lub poproś
+          o wycenę. Dokładnie takiego autonomicznego pracownika możemy stworzyć dla Twojej firmy.
+        </p>
+
+        <ul class="features">
+          <li class="feature">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 5C13.6266 5 11.3066 5.70379 9.33316 7.02236C7.35977 8.34094 5.8217 10.2151 4.91345 12.4078C4.0052 14.6005 3.76756 17.0133 4.23058 19.3411C4.6936 21.6689 5.83649 23.8071 7.51472 25.4853C9.19295 27.1635 11.3312 28.3064 13.6589 28.7694C15.9867 29.2324 18.3995 28.9948 20.5922 28.0866C22.7849 27.1783 24.6591 25.6402 25.9776 23.6668C27.2962 21.6935 28 19.3734 28 17C27.9964 13.8185 26.7309 10.7684 24.4813 8.51874C22.2316 6.26909 19.1815 5.00364 16 5ZM16 27C14.0222 27 12.0888 26.4135 10.4443 25.3147C8.79981 24.2159 7.51809 22.6541 6.76121 20.8268C6.00433 18.9996 5.8063 16.9889 6.19215 15.0491C6.578 13.1093 7.53041 11.3275 8.92894 9.92893C10.3275 8.53041 12.1093 7.578 14.0491 7.19215C15.9889 6.80629 17.9996 7.00433 19.8268 7.7612C21.6541 8.51808 23.2159 9.79981 24.3147 11.4443C25.4135 13.0888 26 15.0222 26 17C25.997 19.6513 24.9425 22.1931 23.0678 24.0678C21.1931 25.9425 18.6513 26.997 16 27ZM21.7075 11.2925C21.8005 11.3854 21.8742 11.4957 21.9246 11.6171C21.9749 11.7385 22.0008 11.8686 22.0008 12C22.0008 12.1314 21.9749 12.2615 21.9246 12.3829C21.8742 12.5043 21.8005 12.6146 21.7075 12.7075L16.7075 17.7075C16.6146 17.8004 16.5043 17.8741 16.3829 17.9244C16.2615 17.9747 16.1314 18.0006 16 18.0006C15.8686 18.0006 15.7385 17.9747 15.6171 17.9244C15.4957 17.8741 15.3854 17.8004 15.2925 17.7075C15.1996 17.6146 15.1259 17.5043 15.0756 17.3829C15.0253 17.2615 14.9994 17.1314 14.9994 17C14.9994 16.8686 15.0253 16.7385 15.0756 16.6171C15.1259 16.4957 15.1996 16.3854 15.2925 16.2925L20.2925 11.2925C20.3854 11.1995 20.4957 11.1258 20.6171 11.0754C20.7385 11.0251 20.8686 10.9992 21 10.9992C21.1314 10.9992 21.2615 11.0251 21.3829 11.0754C21.5043 11.1258 21.6146 11.1995 21.7075 11.2925ZM12 2C12 1.73478 12.1054 1.48043 12.2929 1.29289C12.4804 1.10536 12.7348 1 13 1H19C19.2652 1 19.5196 1.10536 19.7071 1.29289C19.8946 1.48043 20 1.73478 20 2C20 2.26522 19.8946 2.51957 19.7071 2.70711C19.5196 2.89464 19.2652 3 19 3H13C12.7348 3 12.4804 2.89464 12.2929 2.70711C12.1054 2.51957 12 2.26522 12 2Z"/>
+              </svg>
+            </span>
+            <span class="feature__label">Reakcja w ułamku<br />sekundy</span>
+          </li>
+
+          <li class="feature">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.99997 8C5.99997 7.73478 6.10533 7.48043 6.29286 7.29289C6.4804 7.10536 6.73475 7 6.99997 7H8.99997V5C8.99997 4.73478 9.10533 4.48043 9.29286 4.29289C9.4804 4.10536 9.73476 4 9.99997 4C10.2652 4 10.5195 4.10536 10.7071 4.29289C10.8946 4.48043 11 4.73478 11 5V7H13C13.2652 7 13.5195 7.10536 13.7071 7.29289C13.8946 7.48043 14 7.73478 14 8C14 8.26522 13.8946 8.51957 13.7071 8.70711C13.5195 8.89464 13.2652 9 13 9H11V11C11 11.2652 10.8946 11.5196 10.7071 11.7071C10.5195 11.8946 10.2652 12 9.99997 12C9.73476 12 9.4804 11.8946 9.29286 11.7071C9.10533 11.5196 8.99997 11.2652 8.99997 11V9H6.99997C6.73475 9 6.4804 8.89464 6.29286 8.70711C6.10533 8.51957 5.99997 8.26522 5.99997 8ZM23 24H22V23C22 22.7348 21.8946 22.4804 21.7071 22.2929C21.5195 22.1054 21.2652 22 21 22C20.7348 22 20.4804 22.1054 20.2929 22.2929C20.1053 22.4804 20 22.7348 20 23V24H19C18.7348 24 18.4804 24.1054 18.2929 24.2929C18.1053 24.4804 18 24.7348 18 25C18 25.2652 18.1053 25.5196 18.2929 25.7071C18.4804 25.8946 18.7348 26 19 26H20V27C20 27.2652 20.1053 27.5196 20.2929 27.7071C20.4804 27.8946 20.7348 28 21 28C21.2652 28 21.5195 27.8946 21.7071 27.7071C21.8946 27.5196 22 27.2652 22 27V26H23C23.2652 26 23.5195 25.8946 23.7071 25.7071C23.8946 25.5196 24 25.2652 24 25C24 24.7348 23.8946 24.4804 23.7071 24.2929C23.5195 24.1054 23.2652 24 23 24ZM30 18H28V16C28 15.7348 27.8946 15.4804 27.7071 15.2929C27.5195 15.1054 27.2652 15 27 15C26.7348 15 26.4804 15.1054 26.2929 15.2929C26.1053 15.4804 26 15.7348 26 16V18H24C23.7348 18 23.4804 18.1054 23.2929 18.2929C23.1053 18.4804 23 18.7348 23 19C23 19.2652 23.1053 19.5196 23.2929 19.7071C23.4804 19.8946 23.7348 20 24 20H26V22C26 22.2652 26.1053 22.5196 26.2929 22.7071C26.4804 22.8946 26.7348 23 27 23C27.2652 23 27.5195 22.8946 27.7071 22.7071C27.8946 22.5196 28 22.2652 28 22V20H30C30.2652 20 30.5195 19.8946 30.7071 19.7071C30.8946 19.5196 31 19.2652 31 19C31 18.7348 30.8946 18.4804 30.7071 18.2929C30.5195 18.1054 30.2652 18 30 18ZM27.4137 10L9.99997 27.4137C9.62494 27.7885 9.11643 27.9991 8.58622 27.9991C8.05602 27.9991 7.54751 27.7885 7.17247 27.4137L4.58497 24.8288C4.39921 24.643 4.25185 24.4225 4.15131 24.1798C4.05077 23.9372 3.99902 23.6771 3.99902 23.4144C3.99902 23.1517 4.05077 22.8916 4.15131 22.6489C4.25185 22.4062 4.39921 22.1857 4.58497 22L22 4.58625C22.1857 4.40048 22.4062 4.25312 22.6489 4.15259C22.8916 4.05205 23.1517 4.0003 23.4143 4.0003C23.677 4.0003 23.9371 4.05205 24.1798 4.15259C24.4225 4.25312 24.643 4.40048 24.8287 4.58625L27.4137 7.17125C27.5995 7.35697 27.7468 7.57747 27.8474 7.82015C27.9479 8.06283 27.9997 8.32294 27.9997 8.58562C27.9997 8.84831 27.9479 9.10842 27.8474 9.3511C27.7468 9.59378 27.5995 9.81428 27.4137 10ZM20.585 14L18 11.4137L5.99997 23.4137L8.58497 26L20.585 14ZM26 8.58625L23.4137 6L19.4137 10L22 12.5863L26 8.58625Z"/>
+              </svg>
+            </span>
+            <span class="feature__label">Automatyczne<br />pozyskiwanie klientów</span>
+          </li>
+
+          <li class="feature">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M26 3H9C7.93913 3 6.92172 3.42143 6.17157 4.17157C5.42143 4.92172 5 5.93913 5 7V28C5 28.2652 5.10536 28.5196 5.29289 28.7071C5.48043 28.8946 5.73478 29 6 29H24C24.2652 29 24.5196 28.8946 24.7071 28.7071C24.8946 28.5196 25 28.2652 25 28C25 27.7348 24.8946 27.4804 24.7071 27.2929C24.5196 27.1054 24.2652 27 24 27H7C7 26.4696 7.21071 25.9609 7.58579 25.5858C7.96086 25.2107 8.46957 25 9 25H26C26.2652 25 26.5196 24.8946 26.7071 24.7071C26.8946 24.5196 27 24.2652 27 24V4C27 3.73478 26.8946 3.48043 26.7071 3.29289C26.5196 3.10536 26.2652 3 26 3ZM15 5H21V14L18.5987 12.2C18.4257 12.0702 18.2151 12 17.9988 12C17.7824 12 17.5718 12.0702 17.3988 12.2L15 14V5ZM25 23H9C8.29768 22.999 7.60763 23.1841 7 23.5362V7C7 6.46957 7.21071 5.96086 7.58579 5.58579C7.96086 5.21071 8.46957 5 9 5H13V16C13 16.1857 13.0517 16.3678 13.1493 16.5257C13.247 16.6837 13.3867 16.8114 13.5528 16.8944C13.7189 16.9775 13.9048 17.0126 14.0898 16.996C14.2748 16.9793 14.4514 16.9114 14.6 16.8L18 14.25L21.4013 16.8C21.574 16.9296 21.7841 16.9997 22 17C22.2652 17 22.5196 16.8946 22.7071 16.7071C22.8946 16.5196 23 16.2652 23 16V5H25V23Z"/>
+              </svg>
+            </span>
+            <span class="feature__label">Baza wiedzy<br />Twojej marki</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: glassmorphism chat panel -->
+      <div class="chat reveal" id="chat">
+        <div class="chat__header">
+          <span class="chat__avatar" aria-hidden="true">
+            <svg viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M28 13.993C28 15.8813 27.6301 17.7173 26.9006 19.4415C26.1955 21.1099 25.1868 22.6073 23.9023 23.8918C22.6178 25.1763 21.1205 26.185 19.4521 26.89C17.7243 27.6195 15.8918 27.9895 14.0035 27.9895C12.1152 27.9895 10.2793 27.6195 8.55503 26.89C7.37876 26.3909 6.28627 25.7417 5.2915 24.9529L7.23217 23.0122C9.17283 24.4747 11.5254 25.267 14.0001 25.267C16.4747 25.267 19.843 24.0942 21.9721 21.9651C24.1013 19.8359 25.274 17.0052 25.274 13.993C25.274 10.9808 24.9809 11.0366 24.4259 9.68935L14.2653 19.9232L12.3316 18.0035L23.0262 7.23211L24.9634 5.28098L26.4747 7.62652C26.6283 7.9267 26.7714 8.23036 26.9006 8.54101C27.6301 10.2688 28 12.1012 28 13.9895V13.993Z"/>
+              <path d="M6.02792 6.02094C3.89878 8.15008 2.726 10.9808 2.726 13.993C2.726 17.0052 3.0192 16.9494 3.57417 18.2967L13.7347 8.06282L15.6684 9.98254L4.97382 20.7539L3.03665 22.705C2.45375 21.9756 1.94764 21.1902 1.52531 20.3595C1.37173 20.0593 1.22862 19.7557 1.09948 19.445C0.369982 17.7173 0 15.8848 0 13.9965C0 12.1082 0.369982 10.2722 1.09948 8.54799C1.80454 6.87958 2.81326 5.3822 4.09773 4.09773C5.3822 2.81326 6.87958 1.80454 8.54799 1.09948C10.2757 0.369982 12.1082 0 13.9965 0C15.8848 0 17.7208 0.369982 19.445 1.09948C20.6213 1.5986 21.7138 2.24782 22.7085 3.03665L20.7679 4.97731C18.8272 3.51483 16.4747 2.72251 14 2.72251C11.5253 2.72251 8.15707 3.89529 6.02792 6.02443V6.02094Z"/>
+            </svg>
+          </span>
+          <div class="chat__id">
+            <span class="chat__name">Asystent Vebis</span>
+            <span class="chat__status"><i class="chat__dot"></i> Online — zwykle odpowiada od razu</span>
+          </div>
+        </div>
+
+        <div class="chat__log" id="chatLog" role="log" aria-live="polite"></div>
+
+        <div class="chat__suggest" id="chatSuggest">
+          <button type="button" class="chip" data-prompt="Ile kosztuje strona internetowa?">Ile kosztuje strona?</button>
+          <button type="button" class="chip" data-prompt="Jak wygląda proces współpracy?">Jak wygląda proces?</button>
+          <button type="button" class="chip" data-prompt="Poproszę o wstępną wycenę mojego projektu.">Poproś o wycenę</button>
+        </div>
+
+        <form class="chat__input" id="chatForm" autocomplete="off">
+          <input
+            id="chatField"
+            class="chat__field"
+            type="text"
+            name="message"
+            placeholder="Napisz wiadomość…"
+            aria-label="Napisz wiadomość do asystenta"
+            maxlength="500"
+          />
+          <button type="submit" class="chat__send" id="chatSend" aria-label="Wyślij">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 2 11 13" />
+              <path d="M22 2 15 22l-4-9-9-4 20-7Z" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="proces">
+    <div class="process__ambient" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--3"></span>
+    </div>
+
+    <div class="process__head reveal">
+      <span class="eyebrow"><i class="eyebrow__dot"></i> Proces</span>
+      <h2 class="process__title">Prosta ścieżka od pomysłu do efektu.</h2>
+    </div>
+
+    <div class="process__steps">
+      <article class="step step--left reveal">
+        <span class="step__num">01</span>
+        <div class="step__body">
+          <h3 class="step__title">Analiza &amp; Briefing</h3>
+          <p class="step__text">
+            Zaczynamy od bezpłatnej konsultacji i głębokiego wejścia w Twój biznes.
+            Mapujemy Twoje cele, analizujemy konkurencję i przygotowujemy transparentną
+            wycenę wraz z planem działania w 48h.
+          </p>
+        </div>
+      </article>
+
+      <article class="step step--right reveal">
+        <span class="step__num">02</span>
+        <div class="step__body">
+          <h3 class="step__title">Design &amp; Iteracje</h3>
+          <p class="step__text">
+            Tworzymy unikalne makiety UX/UI, branding i architekturę systemów AI.
+            Pracujemy w pętlach poprawek – nie zamykamy tego etapu, dopóki nie będziesz
+            w 100% zachwycony kierunkiem wizualnym.
+          </p>
+        </div>
+      </article>
+
+      <article class="step step--left reveal">
+        <span class="step__num">03</span>
+        <div class="step__body">
+          <h3 class="step__title">Launch &amp; Autopilot</h3>
+          <p class="step__text">
+            Kodujemy szybką stronę www, wdrażamy i szkolimy Twojego chatbota AI oraz
+            optymalizujemy SEO. Oddajemy Ci gotowy, działający ekosystem wraz z pełnymi
+            prawami autorskimi. Twój biznes zaczyna rosnąć.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div class="process__outro reveal">
+      <p class="process__outro-text">
+        Twój biznes zasługuje na standard premium.<br />
+        Zacznijmy od rozmowy.
+      </p>
+      <a href="konsultacja.html" class="btn btn--outline">Darmowa konsultacja <span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="faq__ambient" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--3"></span>
+    </div>
+
+    <div class="faq__inner">
+      <div class="faq__head reveal">
+        <span class="eyebrow"><i class="eyebrow__dot"></i> FAQ</span>
+        <h2 class="faq__title">Najczęstsze pytania<br />i proste odpowiedzi.</h2>
+        <p class="faq__lead">Wszystko, co musisz wiedzieć o współpracy z naszym studiem.</p>
+        <a href="konsultacja.html" class="btn btn--outline">Zadaj pytanie <span class="arrow">↗</span></a>
+      </div>
+
+      <div class="faq__list reveal">
+        <div class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span class="faq__q-text">1. Czy realizujecie również mniejsze projekty, takie jak samo logo lub prosty landing page?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer"><div class="faq__answer-inner"><p>
+            Oczywiście. Każda wielka marka zaczynała od jednego małego kroku. Chętnie
+            podejmujemy się mniejszych wyzwań – od projektowania unikalnej identyfikacji
+            wizualnej po szybkie, sprzedażowe strony docelowe. Bez względu na skalę projektu,
+            każdy element tworzymy według naszego najwyższego standardu jakości i z dbałością
+            o najmniejszy pixel.
+          </p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span class="faq__q-text">2. Ile kosztuje współpraca z Vebis?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer"><div class="faq__answer-inner"><p>
+            Każdy biznes jest inny, dlatego nie stosujemy sztywnych cenników. Po bezpłatnej
+            konsultacji i analizie Twoich potrzeb, w ciągu 48 godzin otrzymasz transparentną,
+            rozpisaną na czynniki pierwsze wycenę. Kwota, którą zobaczysz na starcie, jest
+            ostateczna – nie dopisujemy ukrytych kosztów w trakcie pracy.
+          </p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span class="faq__q-text">3. Jakie zaangażowanie jest wymagane z mojej strony?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer"><div class="faq__answer-inner"><p>
+            Szanujemy Twój czas. Po wstępnym briefie i zebraniu kluczowych informacji,
+            przejmujemy pełną odpowiedzialność za projekt. Ty skupiasz się na prowadzeniu
+            biznesu, a my wracamy do Ciebie wyłącznie na zaplanowane etapy akceptacji grafik
+            czy funkcjonalności chatbota.
+          </p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span class="faq__q-text">4. Co się dzieje po zakończeniu projektu? Czy zostaję z tym sam?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer"><div class="faq__answer-inner"><p>
+            Nie uzależniamy Cię od siebie. Po finalnym wdrożeniu przekazujemy Ci 100% praw
+            autorskich oraz otwarte pliki źródłowe. Strony i systemy AI projektujemy tak, aby
+            ich obsługa była intuicyjna i nie wymagała wiedzy programistycznej. Oczywiście
+            zapewniamy też opcjonalne wsparcie powdrożeniowe.
+          </p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span class="faq__q-text">5. Nie mam gotowych tekstów ani zdjęć. Czy to problem?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer"><div class="faq__answer-inner"><p>
+            Żaden. W ramach współpracy zajmujemy się pełnym copywritingiem strukturalnym oraz
+            pomagamy w doborze i kreacji odpowiednich materiałów wizualnych. Dbamy o to, aby
+            treść na Twojej stronie idealnie rezonowała z grupą docelową i sprzedawała Twoje
+            usługi.
+          </p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span class="faq__q-text">6. Ile czasu trwa współpraca i realizacja projektu?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer"><div class="faq__answer-inner"><p>
+            Wszystko zależy od skali wyzwania. Mniejsze projekty, takie jak identyfikacja
+            wizualna czy dedykowany landing page, zamykamy zazwyczaj w 2 do 3 tygodni.
+            Kompleksowe wdrożenia – łączące zaawansowane strony internetowe z automatyzacją AI
+            i strategią – zajmują średnio od 4 do 6 tygodni. Dokładny harmonogram z rozpisanymi
+            etapami otrzymasz od nas już na poziomie wyceny, dzięki czemu masz pewność, że
+            wystartujesz na czas.
+          </p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="kontakt">
+    <div class="footer__top reveal">
+      <div class="footer__cta">
+        <div class="footer__headline">
+          <h2 class="footer__title">Zacznijmy<br />współpracę</h2>
+          <a class="footer__circle" href="konsultacja.html" aria-label="Umów konsultację">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7" />
+              <path d="M8 7h9v9" />
+            </svg>
+          </a>
+        </div>
+        <p class="footer__sub">Masz pytania? Skontaktuj się!</p>
+        <a href="konsultacja.html" class="btn btn--outline">Kontakt <span class="arrow">↗</span></a>
+      </div>
+
+      <nav class="footer__col">
+        <span class="eyebrow"><i class="eyebrow__dot"></i> Strony</span>
+        <a href="#uslugi">Usługi</a>
+        <a href="#asystent">Asystent AI</a>
+        <a href="#proces">Przebieg współpracy</a>
+        <a href="#faq">FAQ</a>
+        <a href="konsultacja.html">Kontakt</a>
+      </nav>
+
+      <nav class="footer__col">
+        <span class="eyebrow"><i class="eyebrow__dot"></i> Prawne</span>
+        <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+      </nav>
+    </div>
+
+    <div class="footer__brand" aria-hidden="true">vebis<span class="footer__brand-studio"> studio</span></div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+  <script src="chatbot.js"></script>
+  <script src="cookie-consent.js" defer></script>
+</body>
+</html>

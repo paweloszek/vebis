@@ -1,0 +1,13 @@
+# Local-development only — the production API lives in /api serverless functions.
+server/
+
+# Local tooling / editor
+.claude/
+.vscode/
+.idea/
+
+# Never deploy dependencies or secrets (Vercel installs deps itself)
+node_modules/
+.env
+.env.*
+!.env.example
