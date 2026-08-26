@@ -4,7 +4,7 @@
 
 **Webdesign & AI automation agency — landing site with a built‑in AI assistant.**
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-vebis.vercel.app-000?style=for-the-badge&logo=vercel&logoColor=white)](https://vebis.pl)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-vebis.pl-000?style=for-the-badge&logo=vercel&logoColor=white)](https://vebis.pl)
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
